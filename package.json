@@ -1,0 +1,19 @@
+{
+  "name": "time-diff-server",
+  "version": "1.0.0",
+  "description": "Receives connections from time-diff-client sending current server time to it, useful for time synchronization.",
+  "main": "index.js",
+  "scripts": {
+    "test": "standard",
+    "test-focus": "standard-focus",
+    "start": "node index.js"
+  },
+  "author": "Alberto Miranda",
+  "license": "MIT",
+  "dependencies": {
+    "ws": "^2.3.1"
+  },
+  "devDependencies": {
+    "standard-focus": "^1.1.2"
+  }
+}
