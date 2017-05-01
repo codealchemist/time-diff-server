@@ -8,6 +8,9 @@
     "test-focus": "standard-focus",
     "start": "node index.js"
   },
+  "bin": {
+    "tds": "./index.js"
+  },
   "author": "Alberto Miranda",
   "repository": "codealchemist/time-diff-server",
   "license": "MIT",
