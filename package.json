@@ -9,6 +9,7 @@
     "start": "node index.js"
   },
   "author": "Alberto Miranda",
+  "repository": "codealchemist/time-diff-server",
   "license": "MIT",
   "dependencies": {
     "ws": "^2.3.1"
