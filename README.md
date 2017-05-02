@@ -7,6 +7,8 @@ Waits for socket connections from instances of [time-diff-client](https://github
 Answers `time` requests from clients with server's current time.
 Clients will use this data to get time difference between their clocks and the server's.
 
+Defaults to port `8001`.
+
 The implementation is based on NTP.
 
 
@@ -18,6 +20,10 @@ The implementation is based on NTP.
 ## Start
 
 `tds`
+
+Or, to specify a custom port:
+
+`PORT=7000 tds`
 
 
 Enjoy!
