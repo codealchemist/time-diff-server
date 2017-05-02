@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 const WebSocket = require('ws')
-const port = 8080
+const port = process.env.PORT || 8001
 const wss = new WebSocket.Server({
   perMessageDeflate: false,
   port
