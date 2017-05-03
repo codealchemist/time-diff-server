@@ -15,6 +15,7 @@
   "repository": "codealchemist/time-diff-server",
   "license": "MIT",
   "dependencies": {
+    "udp-node": "^1.1.2",
     "ws": "^2.3.1"
   },
   "devDependencies": {
