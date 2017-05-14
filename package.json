@@ -1,6 +1,6 @@
 {
   "name": "time-diff-server",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "Receives requests from time-diff-client. Responds with current server time to. Useful for time synchronization.",
   "main": "index.js",
   "scripts": {
