@@ -1,20 +1,24 @@
 {
   "name": "time-diff-server",
   "version": "1.0.1",
-  "description": "Receives connections from time-diff-client sending current server time to it, useful for time synchronization.",
+  "description": "Receives requests from time-diff-client. Responds with current server time to. Useful for time synchronization.",
   "main": "index.js",
   "scripts": {
     "test": "standard",
     "test-focus": "standard-focus",
-    "start": "node index.js"
+    "start": "node udp/index.js",
+    "udp": "node ./udp/index.js",
+    "ws": "node ./ws/index.js"
   },
   "bin": {
-    "tds": "./index.js"
+    "tds-udp": "./udp/index.js",
+    "tds-ws": "./ws/index.js"
   },
   "author": "Alberto Miranda",
   "repository": "codealchemist/time-diff-server",
   "license": "MIT",
   "dependencies": {
+    "chalk": "^1.1.3",
     "udp-node": "^1.1.2",
     "ws": "^2.3.1"
   },

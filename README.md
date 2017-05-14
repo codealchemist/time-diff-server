@@ -1,15 +1,16 @@
 # time-diff-server
-Receives connections from time-diff-client sending current server time to it, useful for time synchronization.
+Receives requests from [time-diff-client](https://github.com/codealchemist/time-diff-client).
+Responds with current server time to. Useful for time synchronization.
 
 ## How it works
 
 Waits for socket connections from instances of [time-diff-client](https://github.com/codealchemist/time-diff-client).
 Answers `time` requests from clients with server's current time.
-Clients will use this data to get time difference between their clocks and the server's.
+Clients will use this data to get the time difference between their clocks and the server's.
 
-Defaults to port `8001`.
+**time-diff-server** provides WebSockets and UDP modes.
 
-The implementation is based on NTP.
+Default WS port is `8001`, UDP is `3024`.
 
 
 ## Install
@@ -19,11 +20,29 @@ The implementation is based on NTP.
 
 ## Start
 
-`tds`
+`tds-udp`: Starts in UDP mode, the recommended one because its lower latency.
 
-Or, to specify a custom port:
+`tds-ws`: Starts in WebSockets mode.
 
-`PORT=7000 tds`
+Passing command line arguments:
+
+`PORT=7000 tds-ws`
+
+Or:
+
+`PORT=7000 tds-udp`
+
+
+## Test code changes
+
+If you clone this repo to play with **time-diff-server** you can test your
+code running:
+
+`npm test`
+
+And:
+
+`npm run test-focus`
 
 
 Enjoy!

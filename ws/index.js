@@ -1,5 +1,9 @@
 #!/usr/bin/env node
 const WebSocket = require('ws')
+const chalk = require('chalk')
+const ascii = require('../ascii-art')
+ascii()
+
 const port = process.env.PORT || 8001
 const wss = new WebSocket.Server({
   perMessageDeflate: false,
@@ -10,15 +14,15 @@ const events = {
 }
 
 function onListening () {
-  log(`LISTENING ON PORT ${port}`)
+  log(chalk.bold(`WS TIME-DIFF-SERVER UP on port ${port}`))
 }
 
 wss.on('connection', (ws) => {
   const host = ws.upgradeReq.headers.host
-  log('client connected:', host)
+  log(`client ${chalk.yellow('connected')} ${chalk.blue(host)}`)
 
   ws.on('message', (data) => {
-    log(`got message from ${host}`, data)
+    log(`got request from ${chalk.blue(host)}`)
     const {type, value} = JSON.parse(data)
     if (!events[type]) return
     events[type](ws, value)
@@ -36,5 +40,6 @@ function onTime (ws) {
 }
 
 function log () {
-  console.log('[ TIME-DIFF-SERVER ]-->', ...arguments)
+  const ts = (new Date()).toISOString()
+  console.log(`${chalk.dim(ts)}:`, ...arguments)
 }
